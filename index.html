@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>灵感游乐场 | Mini 4399</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="hero">
+      <p class="badge">创意聚合平台 · Beta</p>
+      <h1>灵感游乐场</h1>
+      <p>
+        把脑海里的想法变成可用的小工具。先从两个 MVP 开始：
+        <strong>摄影点评助手</strong> 与 <strong>口头表达润色器</strong>。
+      </p>
+    </header>
+
+    <main class="grid">
+      <section class="card">
+        <h2>1) 摄影点评助手</h2>
+        <p class="subtitle">上传你拍摄的照片，得到专业摄影维度评分与建议。</p>
+
+        <label for="photoUpload" class="label">上传图片</label>
+        <input id="photoUpload" type="file" accept="image/*" />
+        <img id="preview" alt="图片预览" class="preview hidden" />
+
+        <button id="analyzeBtn" disabled>开始点评</button>
+
+        <div id="analysisResult" class="result hidden" aria-live="polite"></div>
+      </section>
+
+      <section class="card">
+        <h2>2) 口头表达润色器</h2>
+        <p class="subtitle">
+          输入场景和你想表达的内容，自动压缩重点并生成更口语化的话术。
+        </p>
+
+        <label for="sceneInput" class="label">场景描述</label>
+        <textarea
+          id="sceneInput"
+          rows="3"
+          placeholder="例如：明天晨会要向团队汇报本周产品进展"
+        ></textarea>
+
+        <label for="intentInput" class="label">你想表达的话</label>
+        <textarea
+          id="intentInput"
+          rows="4"
+          placeholder="例如：这个版本做了很多改动，有些需求临时变化，导致排期有影响..."
+        ></textarea>
+
+        <button id="rewriteBtn">生成简化表达</button>
+
+        <div id="rewriteResult" class="result hidden" aria-live="polite"></div>
+      </section>
+    </main>
+
+    <footer>
+      <p>下一步可接入 AI API、用户系统、作品收藏与排行榜，逐步扩展成你的「创意 4399」。</p>
+    </footer>
+
+    <script src="app.js"></script>
+  </body>
+</html>
